@@ -14,7 +14,7 @@ In 2016, Cyclistic launched a successful bike-share offering. Since then, the pr
 Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
 
-### A detailed analysis was performed using R showing the different steps of the data collection process, the data cleaning, the data analysis and finally the visuazlition part.
+A detailed analysis was performed using R showing the different steps of the data collection process, the data cleaning, the data analysis and finally the visuazlition part.
 
 ### The packages used are:
 
