@@ -39,6 +39,7 @@ union distinct
 select * 
 from `case-study-1-351214.bikeshare.202112-divvy-tripdata`
 union distinct
+
 select * 
 from `case-study-1-351214.bikeshare.202201-divvy-tripdata`
 union distinct
