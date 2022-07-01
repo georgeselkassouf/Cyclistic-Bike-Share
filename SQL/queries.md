@@ -1,10 +1,7 @@
 # SQL queries using Google BigQuery
 
-
-
 #Creating a table containing the full dataset
  
-
 select *
 from `case-study-1-351214.bikeshare.202104-divvy-tripdata`
 union distinct
@@ -49,21 +46,20 @@ from `case-study-1-351214.bikeshare.202202-divvy-tripdata`
 union distinct
 
 select * 
-from `case-study-1-351214.bikeshare.202203-divvy-tripdata` 
-
+from `case-study-1-351214.bikeshare.202203-divvy-tripdata`
 
 
 #Viewing the full dataset
 
 select * 
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 
 
 
 #Viewing the ride length column in descending order
 
 select ride_length
-from `case-study-1-351214.bikeshare.full-dataset` 
+from `case-study-1-351214.bikeshare.fulldataset` 
 order by ride_length desc
 
 
@@ -71,7 +67,7 @@ order by ride_length desc
 #Viewing the ride length column for members only
 
 select ride_length
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 where member_casual = "member"
 
 
@@ -79,7 +75,7 @@ where member_casual = "member"
 #Viewing the full dataset for members only
 
 select *
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 where member_casual = "member"
 
 
@@ -87,23 +83,23 @@ where member_casual = "member"
 #Viewing the full dataset for members only and for the day of Saturday
 
 select *
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 where member_casual = "member" and day_of_week = 7
 
 
 
 #Viewing the maximum ride length by membership type
 
-/* select member_casual, max(ride_length) as max_ridelength
-from `case-study-1-351214.bikeshare.full-dataset`
-group by member_casual */
+select member_casual, max(ride_length) as max_ridelength
+from `case-study-1-351214.bikeshare.fulldataset`
+group by member_casual
 
 
 
 #Viewing the maximum ride length grouped by day and ordered by descending order of ride length
 
 select day_of_week, max(ride_length) as max_ridelength
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 group by day_of_week
 order by max_ridelength desc
 
@@ -112,21 +108,21 @@ order by max_ridelength desc
 #Viewing the minimum ride length
 
 select min(ride_length) as min_ridelength
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 
 
 
 #Viewing the total number of rows
 
 select count(*) as countrows
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 
 
 
 #Viewing all the rideable types
 
 select distinct rideable_type	
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 order by rideable_type asc
 
 
@@ -134,15 +130,15 @@ order by rideable_type asc
 #Viewing the maximum ride length in descending order grouped by the start station name (first 50 results)
 
 select max(ride_length) as max_ridelength, start_station_name
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 where start_station_name is not null
 group by start_station_name
 order by max_ridelength desc
-limit 50 */
+limit 50
 
 
 
-#Assigning the name of days
+#Renaming the days by their names and viewing the start station, end station, day and ride length for members only by descending order of ride length
 
 select start_station_name as StartStation, end_station_name as FinalStation, ride_length as RideLength,
 case
@@ -153,9 +149,8 @@ case
   when day_of_week = 5 then "Thursday"
   when day_of_week = 6 then "Friday"
   when day_of_week = 7 then "Saturday"
-  ELSE "Error"
+  else "Error"
 end as Day
-from `case-study-1-351214.bikeshare.full-dataset`
+from `case-study-1-351214.bikeshare.fulldataset`
 where member_casual = "member"
 order by ride_length desc
-
