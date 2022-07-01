@@ -51,6 +51,7 @@ select *
 from `case-study-1-351214.bikeshare.202203-divvy-tripdata`
 
 
+
 #Viewing the full dataset
 
 select * 
