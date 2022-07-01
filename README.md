@@ -15,16 +15,6 @@ Until now, Cyclistic’s marketing strategy relied on building general awareness
 
 ## Description
 
-Some SQL queries were performed and can be found in this repository under https://github.com/georgeselkassouf/Cyclistic-Bike-Share/tree/main/SQL
+Some SQL queries were performed and can be found in this repository under the "SQL" directory https://github.com/georgeselkassouf/Cyclistic-Bike-Share/tree/main/SQL
 
 Moreover, a detailed analysis was performed using R showing the different steps of the data collection process, the data cleaning, the data analysis and finally the visualization part. The R notebook is available in this repository as well as on Kaggle.
-
-### Packages
-
-tidyverse
-
-lubridate
-
-zoo
-
-janitor
