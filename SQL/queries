@@ -53,7 +53,7 @@ from `case-study-1-351214.bikeshare.202203-divvy-tripdata`
 
 
 
-##Saved the results in a BigQuery table "fulldataset"
+##Saved the results in a BigQuery table named "fulldataset"
 
 
 
