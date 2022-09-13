@@ -148,7 +148,7 @@ limit 50
 
 
 
-#Renaming the days by their names and viewing the start station, end station, day and ride length for members only by descending order of ride length
+#Renaming the days by their names and viewing the start station, end station, day and ride length by descending order of ride length
 
 select start_station_name as StartStation, end_station_name as FinalStation, ride_length as RideLength,
 case
@@ -162,5 +162,4 @@ case
   else "Error"
 end as Day
 from `case-study-1-351214.bikeshare.fulldataset`
-where member_casual = "member"
 order by ride_length desc
